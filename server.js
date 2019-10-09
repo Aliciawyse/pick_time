@@ -5,7 +5,7 @@ import { renderToString } from "react-dom/server";
 import fs from "fs";
 import App from "./src/App";
 
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 // read in html that we generated
 const html = fs.readFileSync("dist/index.html").toString();
@@ -18,9 +18,7 @@ const app = express();
 app.use("/dist", express.static("dist"));
 app.use((req, res) => {
     const reactMarkup = (
-        <ServerLocation url={req.url}>
-            <App />
-        </ServerLocation>
+        <App />
     );
 
     res.send(`${parts[0]}${renderToString(reactMarkup)}${parts[1]}`);
