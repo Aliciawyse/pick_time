@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import TimeTable from "./TimeTable";
 import { Provider as ReduxProvider } from 'react-redux';
 import store from "./store";
@@ -15,4 +14,4 @@ const App = () => {
     )
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+export default App;

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./Modal.css";
+// import connect from react-redux
 import { connect } from "react-redux";
+// import our action creators
 import changeName from "./actionCreators/changeName";
 import changeNumber from "./actionCreators/changeNumber";
 
@@ -16,8 +18,8 @@ class Modal extends Component {
                                 FullName
                                 <input
                                     id="location"
-                                    onChange={""}
-                                    value={""}
+                                    onChange={this.props.handleNameChange}
+                                    value={this.props.name}
                                     placeholder="Enter full name"
                                 />
                             </label>
@@ -25,8 +27,8 @@ class Modal extends Component {
                                 Number
                                 <input
                                     id="location"
-                                    onChange={""}
-                                    value={""}
+                                    onChange={this.props.handleNumberChange}
+                                    value={this.props.number}
                                     placeholder="Enter phone number"
                                 />
                             </label>
@@ -47,4 +49,14 @@ const mapStateToProps = ({ name, number }) => ({
     number
 });
 
-export default connect(mapStateToProps)(Modal);
+const mapDispatchToProps = dispatch => ({
+    // methods that dispatch actions to redux
+    handleNameChange(event) {
+        dispacth(changeName(event.target.value));
+    },
+    handleNumberChange(event) {
+        dispatch(changeNumber(event.target.value))
+    }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);
