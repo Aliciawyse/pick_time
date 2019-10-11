@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import "./Modal.css";
 // import connect from react-redux
 import { connect } from "react-redux";
-// import our action creators
-import changeName from "./actionCreators/changeName";
-import changeNumber from "./actionCreators/changeNumber";
 
 class Modal extends Component {
     render() {

@@ -8,13 +8,16 @@ export default function TimeTable() {
     const dispatch = useDispatch()
     const timeslots = useSelector(state => state.timeslots)
 
+
     useEffect(() => {
 
         dispatch({
             type: 'REQUEST_TIMESLOTS'
         })
 
-        // action creator
+        // this chunk of code should go in its own
+        // action creator directory but for troubleshooting
+        //  purposes putting it here.
         availabilityRequest().then(results => {
             console.log("timeslots", results)
 
