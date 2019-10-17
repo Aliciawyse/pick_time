@@ -1,0 +1,16 @@
+{
+    "presets": [
+        "@babel/preset-react",
+        [
+            "@babel/preset-env",
+            {
+                "useBuiltIns": "usage"
+            }
+        ]
+    ],
+    "plugins": [
+        "transform-class-properties",
+        "css-modules-transform",
+        "@babel/plugin-transform-runtime"
+    ]
+}
