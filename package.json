@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "isomorphic-fetch": "^2.2.1",
     "normalizer": "^1.2.7",
     "normalizr": "^3.4.1",
